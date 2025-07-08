@@ -2,13 +2,14 @@
   config,
   pkgs,
   inputs,
+  userName,
   ...
 }: let
 in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "hitmonlee";
-  home.homeDirectory = "/home/hitmonlee";
+  home.username = userName;
+  home.homeDirectory = "/home/${userName}";
 
   imports = [
     # inputs.zen-browser.homeModules.beta
@@ -47,6 +48,8 @@ in {
     # '';
     # ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink (builtins.toString "${configDir}/.config/nvim");
   };
+
+  # xdg.configFile.nvim.source = "${dotfiles}/nvim";
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a

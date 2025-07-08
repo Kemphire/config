@@ -9,6 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
@@ -30,9 +31,11 @@
       inherit system;
       config.allowUnfree = true;
     };
+    hostname = "kapil";
+    userName = "hitmonlee";
   in {
     nixosConfigurations = {
-      kapil = lib.nixosSystem {
+      ${hostname} = lib.nixosSystem {
         inherit system;
 
         modules = [
@@ -47,7 +50,7 @@
       };
     };
     homeConfigurations = {
-      hitmonlee = home-manager.lib.homeManagerConfiguration {
+      ${userName} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           ./home.nix
@@ -55,6 +58,7 @@
 
         extraSpecialArgs = {
           inherit inputs;
+	  inherit userName;
         };
       };
     };

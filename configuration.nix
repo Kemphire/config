@@ -37,7 +37,6 @@
     allowUnfree = true;
   };
 
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -67,12 +66,12 @@
   services = {
     desktopManager.plasma6.enable = true;
     displayManager.ly = {
-    	enable = true;
-	package = pkgs.ly;
-	settings =  {
-		greeter_msg = "Welcome to my linux machine";
-	}; 
-	};
+      enable = true;
+      package = pkgs.ly;
+      settings = {
+        greeter_msg = "Welcome to my linux machine";
+      };
+    };
 
     # displayManager.sddm.enable = true;
     #

@@ -15,6 +15,7 @@ in {
     # inputs.zen-browser.homeModules.beta
     inputs.zen-browser.homeModules.twilight
     # or inputs.zen-browser.homeModules.twilight-official
+    ./settings/home-settings
   ];
 
   # find alternative for it
@@ -101,10 +102,10 @@ in {
       lg = "lazygit";
     };
     plugins = with pkgs.fishPlugins; [
-      {
-        name = "pure";
-        src = pure.src;
-      }
+      # {
+      #   name = "pure";
+      #   src = pure.src;
+      # }
       {
         name = "autopair";
         src = autopair.src;
@@ -254,6 +255,7 @@ in {
   programs.zed-editor = {
     enable = true;
   };
+
 
   # configure services here
   services = {

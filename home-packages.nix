@@ -44,4 +44,6 @@ with pkgs; [
   thunderbird
 
   zed-editor
+
+  starship
 ]

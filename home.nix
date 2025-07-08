@@ -50,7 +50,10 @@ in {
     # ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink (builtins.toString "${configDir}/.config/nvim");
   };
 
-  # xdg.configFile.nvim.source = "${dotfiles}/nvim";
+  xdg.configFile."nvim" = {
+  	source = ./dotfiles_imper/.config/nvim;
+	recursive = true;
+  }; 
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a

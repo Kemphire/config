@@ -12,8 +12,7 @@
       continuation_prompt = "[▸▹ ](dimmed white)";
       format =
         builtins.concatStringsSep "" [
-          "($nix_shell$container$fill$git_metric
-       │ s\n)$cmd_duration"
+          "($nix_shell$container$fill$git_metrics\n)$cmd_duration"
           "hostname"
           "$localip"
           "$shlvl"

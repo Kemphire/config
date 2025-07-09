@@ -30,6 +30,7 @@ with pkgs; [
   kdiff3 # Compares and merges 2 or 3 files or directories
   kdePackages.isoimagewriter # Optional: Program to write hybrid ISO files onto USB disks
   kdePackages.partitionmanager # Optional Manage the disk devices, partitions and file systems on your computer
+  kdePackages.plasma-browser-integration
   hardinfo2 # System information and benchmarks for Linux systems
   haruna # Open source video player built with Qt/QML and libmpv
   wayland-utils # Wayland utilities

@@ -5,12 +5,13 @@
   config,
   lib,
   pkgs,
+  userName,
   ...
-}:
-# let
-#   home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz;
-# in
-{
+}: let
+  sddm-astronaut = pkgs.sddm-astronaut.override {
+    embeddedTheme = "post-apocalyptic_hacker";
+  };
+in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -66,16 +67,32 @@
   services = {
     desktopManager.plasma6.enable = true;
     displayManager.ly = {
-      enable = true;
+      enable = false;
       package = pkgs.ly;
       settings = {
         greeter_msg = "Welcome to my linux machine";
       };
     };
 
-    # displayManager.sddm.enable = true;
-    #
-    # displayManager.sddm.wayland.enable = true;
+    displayManager = {
+      sddm = {
+        wayland.enable = true;
+        enable = true;
+        package = lib.mkForce pkgs.kdePackages.sddm;
+
+        theme = "sddm-astronaut-theme";
+
+        extraPackages = [sddm-astronaut];
+      };
+      autoLogin = {
+        enable = false;
+        user = userName;
+      };
+
+      # displayManager.sddm.enable = true;
+      #
+      # displayManager.sddm.wayland.enable = true;
+    };
   };
 
   # mounting my old data
@@ -137,7 +154,7 @@
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; import ./packages.nix {inherit pkgs;};
+  environment.systemPackages = import ./packages.nix {inherit pkgs;} ++ [sddm-astronaut];
 
   # for fonts
   fonts.packages = with pkgs; [

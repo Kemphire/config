@@ -1,8 +1,6 @@
 {
   imports = [
-  	./starship.nix
+    ./starship.nix
+    ./theme-settings.nix
   ];
 }
-
-
-

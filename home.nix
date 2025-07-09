@@ -144,7 +144,7 @@ in {
       tab_bar_edge = "top";
       tab_bar_style = "powerline";
       background_blur = 5;
-      font_family = "Fira Code";
+      font_family = "FiraCode Nerd Font";
       cursor_trail = 1;
     };
     shellIntegration.enableFishIntegration = true;
@@ -157,7 +157,7 @@ in {
       font = {
         size = 16;
         normal = {
-          family = "Fira Code";
+          family = "FiraCode Nerd Font";
           style = "Regular";
         };
       };
@@ -252,6 +252,26 @@ in {
           "value" = true;
           "Status" = "locked";
         };
+      };
+    };
+  };
+
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        term = "xterm-256color";
+
+        font = "FiraCode Nerd Font:size=16";
+        dpi-aware = "yes";
+      };
+
+      mouse = {
+        hide-when-typing = "yes";
+      };
+      cursor = {
+        style = "beam";
+        blink = "yes";
       };
     };
   };

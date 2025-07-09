@@ -15,6 +15,11 @@
       # to have it up-to-date or simply don't specify the nixpkgs input
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    xremap-flakes = {
+      url = "github:xremap/nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # ...
     self.submodules = true;
   };
@@ -38,11 +43,13 @@
       ${hostname} = lib.nixosSystem {
         inherit system;
 
+        specialArgs = {inherit userName inputs;};
+
         modules = [
           ./configuration.nix
-          {
-            _module.args = {inherit userName;};
-          }
+          # {
+          #   _module.args = {inherit userName;};
+          # }
 
           {
             environment.extraOutputsToInstall = ["dev"];

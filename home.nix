@@ -273,6 +273,10 @@ in {
         style = "beam";
         blink = "yes";
       };
+
+      colors = {
+        alpha = 0.7;
+      };
     };
   };
 

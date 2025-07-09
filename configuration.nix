@@ -6,6 +6,7 @@
   lib,
   pkgs,
   userName,
+  inputs,
   ...
 }: let
   sddm-astronaut = pkgs.sddm-astronaut.override {
@@ -16,6 +17,9 @@ in {
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./settings/system-settings.nix
+
+    # xremap
+    inputs.xremap-flakes.nixosModules.default
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -216,5 +220,29 @@ in {
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;
+  };
+
+  services.xremap = {
+    # enable = true;
+    # withHypr = false;
+    # withKDE = true;
+    # withWlroots = false;
+    # userName = userName;
+    # serviceMode = "user";
+
+    yamlConfig = ''
+      modmap:
+        - name: main remaps
+          remap:
+            CapsLock:
+              held: leftctrl
+              alone: esc
+              alone_timeout_millis: 250
+
+      keymap:
+        - name: caps revival
+          remap:
+            SHIFT-KEY_ESC: CapsLock
+    '';
   };
 }

@@ -43,4 +43,6 @@ with pkgs; [
 
   # workaround for using linux the normal way
   distrobox
+
+  pavucontrol
 ]

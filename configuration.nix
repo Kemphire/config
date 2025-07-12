@@ -133,7 +133,7 @@ in {
   users.users.hitmonlee = {
     isNormalUser = true;
     description = "Kartikey";
-    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "video"]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
     home = "/home/hitmonlee";
     packages = with pkgs; [
@@ -245,4 +245,10 @@ in {
             SHIFT-KEY_ESC: CapsLock
     '';
   };
+
+  programs.light.enable = true;
+  security.polkit.enable = true;
+
+  # to avoid getting stuck for minutes in building mach-caches
+  documentation.man.generateCaches = false;
 }

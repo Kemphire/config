@@ -46,4 +46,5 @@ with pkgs; [
   zed-editor
 
   starship
+  autotiling
 ]

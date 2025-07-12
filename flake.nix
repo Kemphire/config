@@ -20,6 +20,7 @@
       url = "github:xremap/nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     # ...
     self.submodules = true;
   };

@@ -27,4 +27,7 @@
     experimental-features = ["nix-command" "flakes"];
     trusted-users = ["root" "hitmonlee"];
   };
+
+  # for electron apps running on wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }

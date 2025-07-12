@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   wayland = {
     windowManager = {
       sway = {
@@ -184,7 +188,9 @@
             };
           };
         };
-        extraConfig = ''
+        extraConfig = let
+          modifier = config.wayland.windowManager.sway.config.modifier;
+        in ''
           shadows enable
           shadow_color #f9fc3f
           shadow_inactive_color $bg
@@ -218,7 +224,7 @@
           }
           }
 
-          bindsym --to-code $mod+x mode $exit
+          bindsym --to-code ${modifier}+x mode $exit
 
           set $width 824
           set $height 652
@@ -227,17 +233,17 @@
           # for setting clipse as a menu in kitty and calling it with a hotkey
           for_window [app_id="clipse"] floating enable,sticky enable, border pixel 5, resize set $width $height
           # size for sway-launcher-desktop
-          bindsym --no-repeat $mod+V exec ${pkgs.kitty}/bin/kitty --class clipse -e 'clipse'
+          bindsym --no-repeat ${modifier}+V exec ${pkgs.kitty}/bin/kitty --class clipse -e 'clipse'
 
           # for setting nmtui as a menu in kitty and calling it with a hotkey
           for_window [app_id="nmtui"] floating enable,sticky enable, border pixel 5, resize set $width $height
 
-          bindsym --no-repeat $mod+Shift+n exec ${pkgs.kitty}/bin/kitty --class nmtui -e nmtui
+          bindsym --no-repeat ${modifier}+Shift+n exec ${pkgs.kitty}/bin/kitty --class nmtui -e nmtui
 
           # for setting blutuith as a menu in kitty and calling it with a hotkey
           for_window [app_id="bluetuith"] floating enable,sticky enable,border pixel 10, resize set $width $height
 
-          bindsym --no-repeat $mod+Shift+b exec ${pkgs.foot}/bin/kitty --app-id=bluetuith -e bluetuith
+          bindsym --no-repeat ${modifier}+Shift+b exec ${pkgs.foot}/bin/kitty --app-id=bluetuith -e bluetuith
 
           for_window [app_id="launcher"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
 
@@ -384,5 +390,10 @@
     enable = true;
     imageDisplay.type = "kitty";
     package = pkgs.clipse;
+  };
+
+  programs.waybar = {
+    enable = true;
+    package = pkgs.waybar;
   };
 }

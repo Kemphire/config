@@ -92,6 +92,7 @@ in {
         enable = false;
         user = userName;
       };
+      sessionPackages = [pkgs.swayfx];
 
       # displayManager.sddm.enable = true;
       #

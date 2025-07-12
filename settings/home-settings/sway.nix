@@ -23,6 +23,10 @@
               command = "autotiling";
               always = true;
             }
+            {
+              command = "clipse -listen";
+              always = true;
+            }
           ];
           up = "k";
           down = "j";
@@ -109,8 +113,8 @@
 
             "${modifier}+Shift+space" = "floating toggle";
             "${modifier}+f" = "fullscreen";
-            "${modifier}+Shift+v" = "splith";
-            "${modifier}+v" = "splitv";
+            # "${modifier}+Shift+h" = "splith";
+            # "${modifier}+v" = "splitv";
 
             "${modifier}+s" = "layout stacking";
             "${modifier}+w" = "layout tabbed";
@@ -120,6 +124,12 @@
             "${modifier}+Shift+minus" = "move scratchpad";
             "${modifier}+minus" = "scratchpad show";
             "${modifier}+r" = "mode resizer";
+
+            "${modifier}+Shift+v" = "exec kitty --class clipse -e 'clipse'";
+
+            "${modifier}+b" = "exec kitty --class clipse -e 'bluetuith'";
+
+            "${modifier}+n" = "exec foot --class clipse --class nmtui -e nmtui";
           };
           floating = {
             border = 0;
@@ -131,6 +141,18 @@
               position = "top";
             }
           ];
+          window = {
+            border = 0;
+            titlebar = false;
+            commands = [
+              {
+                command = "floating enable, resize set width 400 px height 225px, sticky on, dim_inactive 0.0";
+                criteria = {
+                  title = "Picture-in-Picture";
+                };
+              }
+            ];
+          };
           modes = {
             resize = {
               Down = "resize grow height 10 px";
@@ -188,6 +210,35 @@
             };
           };
         };
+        extraConfigEarly = ''
+          input "10182:480:DELL09EC:00_27C6:01E0_Touchpad" {
+          dwt enabled
+          tap enabled
+          natural_scroll disabled
+          middle_emulation enabled
+          }
+
+
+          set $width 824
+          set $height 652
+
+
+          # for setting clipse as a menu in kitty and calling it with a hotkey
+          for_window [app_id="clipse"] floating enable,sticky enable, border pixel 5, resize set $width $height
+          # size for sway-launcher-desktop
+
+          # for setting nmtui as a menu in kitty and calling it with a hotkey
+          for_window [app_id="nmtui"] floating enable,sticky enable, border pixel 5, resize set $width $height
+
+
+          # for setting blutuith as a menu in kitty and calling it with a hotkey
+          for_window [app_id="bluetuith"] floating enable,sticky enable,border pixel 10, resize set $width $height
+
+
+          for_window [app_id="launcher"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+
+
+        '';
         extraConfig = let
           modifier = config.wayland.windowManager.sway.config.modifier;
         in ''
@@ -223,27 +274,6 @@
           }
 
           bindsym --to-code ${modifier}+x mode $exit
-
-          set $width 824
-          set $height 652
-
-
-          # for setting clipse as a menu in kitty and calling it with a hotkey
-          for_window [app_id="clipse"] floating enable,sticky enable, border pixel 5, resize set $width $height
-          # size for sway-launcher-desktop
-          bindsym --no-repeat ${modifier}+V exec ${pkgs.kitty}/bin/kitty --class clipse -e 'clipse'
-
-          # for setting nmtui as a menu in kitty and calling it with a hotkey
-          for_window [app_id="nmtui"] floating enable,sticky enable, border pixel 5, resize set $width $height
-
-          bindsym --no-repeat ${modifier}+Shift+n exec ${pkgs.kitty}/bin/kitty --class nmtui -e nmtui
-
-          # for setting blutuith as a menu in kitty and calling it with a hotkey
-          for_window [app_id="bluetuith"] floating enable,sticky enable,border pixel 10, resize set $width $height
-
-          bindsym --no-repeat ${modifier}+Shift+b exec ${pkgs.foot}/bin/kitty --app-id=bluetuith -e bluetuith
-
-          for_window [app_id="launcher"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
 
           bindgesture {
           swipe:right workspace prev

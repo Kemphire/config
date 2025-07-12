@@ -81,8 +81,11 @@ in {
     enable = true;
     name = "Banana";
     package = pkgs.banana-cursor;
-    x11.enable = true;
-    size = 40;
+    x11 = {
+      enable = true;
+      defaultCursor = "Banana";
+    };
+    size = 48;
     gtk.enable = true;
   };
 

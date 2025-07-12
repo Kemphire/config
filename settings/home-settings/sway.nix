@@ -193,7 +193,6 @@
         in ''
           shadows enable
           shadow_color #f9fc3f
-          shadow_inactive_color $bg
           smart_corner_radius enable
           corner_radius 5
           shadow_blur_radius 3
@@ -202,7 +201,6 @@
           blur_passes 3
           blur_noise 0.08
           shadows_on_csd enable
-          dim_inactive_window 0.2
           blur_xray enable
           focus_follows_mouse yes
 
@@ -220,7 +218,7 @@
 
           Return mode "default"
           Escape mode "default"
-          $mod+x mode "default"
+          ${modifier}+x mode "default"
           }
           }
 

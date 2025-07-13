@@ -47,4 +47,5 @@ with pkgs; [
 
   starship
   autotiling
+  (flameshot.override {enableWlrSupport = true;})
 ]

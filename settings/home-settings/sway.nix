@@ -9,6 +9,7 @@
         enable = true;
         package = pkgs.swayfx;
         xwayland = true;
+        wrapperFeatures.gtk = true;
         # there is a bug in swayfx for which we have to make it false
         checkConfig = false;
         config = rec {
@@ -17,6 +18,10 @@
           startup = [
             {
               command = "kdeconnectd";
+              always = true;
+            }
+            {
+              command = "sway-audio-idle-inhibit";
               always = true;
             }
             {
@@ -38,7 +43,7 @@
           right = "l";
           menu = "${pkgs.wofi}/bin/wofi";
           gaps = {
-            inner = 20;
+            inner = 5;
             outer = 2;
             smartGaps = true;
             smartBorders = "on";
@@ -127,7 +132,7 @@
             "${modifier}+space" = "focus mode_toggle";
             "${modifier}+Shift+minus" = "move scratchpad";
             "${modifier}+minus" = "scratchpad show";
-            "${modifier}+r" = "mode resizer";
+            "${modifier}+r" = "mode \"resize\"";
 
             "${modifier}+Shift+v" = "exec kitty --class clipse -e 'clipse'";
 
@@ -241,6 +246,10 @@
 
           for_window [app_id="launcher"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
 
+          exec swayidle -w \
+          timeout 300 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.1' \
+          timeout 450 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          before-sleep 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.1'
 
         '';
         extraConfig = let
@@ -320,7 +329,8 @@
     # Niri
     # display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
   in {
-    enable = true;
+    # this is enabled througout the system so not enable it and just use it directly
+    enable = false;
     timeouts = [
       {
         timeout = 300; # in seconds
@@ -429,5 +439,5 @@
     package = pkgs.waybar;
   };
 
-  home.packages = [pkgs.swaynotificationcenter];
+  home.packages = [pkgs.swaynotificationcenter pkgs.sway-audio-idle-inhibit pkgs.swayidle];
 }

@@ -252,4 +252,6 @@ in {
 
   # to avoid getting stuck for minutes in building mach-caches
   documentation.man.generateCaches = false;
+
+  security.pam.services.swaylock = {};
 }

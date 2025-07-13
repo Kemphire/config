@@ -20,6 +20,10 @@
               always = true;
             }
             {
+              command = "swaync";
+              always = true;
+            }
+            {
               command = "autotiling";
               always = true;
             }
@@ -424,4 +428,6 @@
     enable = true;
     package = pkgs.waybar;
   };
+
+  home.packages = [pkgs.swaynotificationcenter];
 }

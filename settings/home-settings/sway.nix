@@ -449,5 +449,5 @@
     package = pkgs.waybar;
   };
 
-  home.packages = [pkgs.swaynotificationcenter pkgs.sway-audio-idle-inhibit pkgs.swayidle];
+  home.packages = [pkgs.swaynotificationcenter pkgs.sway-audio-idle-inhibit pkgs.swayidle pkgs.libsecret];
 }

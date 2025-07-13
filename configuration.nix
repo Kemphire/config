@@ -165,6 +165,7 @@ in {
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
     fira-code-symbols
+    font-awesome
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

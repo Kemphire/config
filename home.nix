@@ -51,10 +51,10 @@ in {
   };
 
   # a good workaround but not the best
-  xdg.configFile."nvim" = {
-    source = ./dotfiles_imper/.config/nvim;
-    recursive = true;
-  };
+  # xdg.configFile."nvim" = {
+  #   source = ./dotfiles_imper/.config/nvim;
+  #   recursive = true;
+  # };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a

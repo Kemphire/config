@@ -142,7 +142,7 @@
 
             "${modifier}+b" = "exec kitty --class clipse -e 'bluetuith'";
 
-            "${modifier}+n" = "exec foot --class clipse --class nmtui -e nmtui";
+            "${modifier}+n" = "exec foot --app-id nmtui -e nmtui";
           };
           floating = {
             border = 0;
@@ -257,7 +257,7 @@
           timeout 350 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.2' \
           timeout 400 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
           timeout 500 'systemctl suspend' \
-          before-sleep 'swaymsg "output * power off"; swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.2' \
+          before-sleep 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.2' \
           after-resume 'swaymsg "output * power on"' \
           lock 'swaymsg "output * power off"; swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.2' \
           unlock 'swaymsg "output * power on"'

@@ -10,7 +10,7 @@
   ...
 }: let
   sddm-astronaut = pkgs.sddm-astronaut.override {
-    embeddedTheme = "post-apocalyptic_hacker";
+    embeddedTheme = "black_hole";
   };
 in {
   imports = [

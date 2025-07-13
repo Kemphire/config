@@ -132,8 +132,9 @@ in {
     '';
     interactiveShellInit = ''
       if test -d "$HOME/.bun/bin"
-          fish_add_path "$HOME/.bun/bin"
+      	 fish_add_path "$HOME/.bun/bin"
       end
+      set fish_greeting
     '';
   };
   programs.kitty = {

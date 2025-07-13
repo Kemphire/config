@@ -290,5 +290,6 @@ in {
   # configure services here
   services = {
     ssh-agent.enable = true;
+    kdeconnect.indicator = true;
   };
 }

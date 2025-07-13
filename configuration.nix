@@ -248,10 +248,26 @@ in {
   };
 
   programs.light.enable = true;
-  security.polkit.enable = true;
+  security = {
+    polkit.enable = true;
+
+    pam.services = {
+      login.enableGnomeKeyring = true;
+      passwd.enableGnomeKeyring = true;
+      sddm.enableGnomeKeyring = true; # if using SDDM
+      swaylock = {};
+    };
+  };
 
   # to avoid getting stuck for minutes in building mach-caches
   documentation.man.generateCaches = false;
 
-  security.pam.services.swaylock = {};
+  # security.pam.services.swaylock = {};
+
+  # to enable xdg portals
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  };
 }

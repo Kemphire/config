@@ -30,4 +30,7 @@
 
   # for electron apps running on wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  # for storing secrets
+  services.gnome.gnome-keyring.enable = true;
 }

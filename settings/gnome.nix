@@ -100,7 +100,7 @@
   # };
 
   # to avoid conflict between kde and gnome
-  programs.ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
+  # programs.ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
 
   # polkit service
   systemd = {

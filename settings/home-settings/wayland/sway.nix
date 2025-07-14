@@ -7,11 +7,11 @@
     windowManager = {
       sway = {
         enable = true;
-        package = pkgs.swayfx;
+        package = pkgs.sway;
         xwayland = true;
         wrapperFeatures.gtk = true;
         # there is a bug in swayfx for which we have to make it false
-        checkConfig = false;
+        checkConfig = true;
         config = rec {
           modifier = "Mod4";
           terminal = "kitty";
@@ -155,7 +155,7 @@
             }
           ];
           window = {
-            border = 0;
+            border = 2;
             titlebar = false;
             commands = [
               {
@@ -182,39 +182,39 @@
           };
           colors = {
             focused = {
-              border = "#FF79C6";
-              background = "#285577";
-              text = "#f8f8f2";
-              indicator = "#FF79C6";
-              childBorder = "#FF79C6";
+              border = "#000000";
+              background = "#000000";
+              text = "#eeeeec";
+              indicator = "#000000";
+              childBorder = "#000000";
             };
             focusedInactive = {
-              border = "#282a3600";
-              background = "#282a3600";
-              text = "#f8f8f2";
-              indicator = "#282a3600";
-              childBorder = "#282a3600";
+              border = "#1d2021";
+              background = "#1d2021";
+              text = "#babdb6";
+              indicator = "#323232";
+              childBorder = "#323232";
             };
             unfocused = {
-              border = "#282a3600";
-              background = "#282a3600";
-              text = "#f8f8f2";
-              indicator = "#282a3600";
-              childBorder = "#282a3600";
+              border = "#1d2021";
+              background = "#1d2021";
+              text = "#babdb6";
+              indicator = "#323232";
+              childBorder = "#323232";
             };
             urgent = {
-              border = "#282a3600";
-              background = "#282a3600";
-              text = "#f8f8f2";
-              indicator = "#282a3600";
-              childBorder = "#282a3600";
+              border = "#000000";
+              background = "#000000";
+              text = "#eeeeec";
+              indicator = "#323232";
+              childBorder = "#323232";
             };
             placeholder = {
-              border = "#282a3600";
-              background = "#282a3600";
-              text = "#f8f8f2";
-              indicator = "#282a3600";
-              childBorder = "#282a3600";
+              border = "#1d2021";
+              background = "#1d2021";
+              text = "#babdb6";
+              indicator = "#323232";
+              childBorder = "#323232";
             };
           };
           output = {
@@ -265,21 +265,21 @@
         extraConfig = let
           modifier = config.wayland.windowManager.sway.config.modifier;
         in ''
-          shadows enable
-          shadow_color #f9fc3f
-          smart_corner_radius enable
-          corner_radius 5
-          shadow_blur_radius 3
-          blur enable
-          blur_radius 3
-          blur_passes 3
-          blur_noise 0.08
-          shadows_on_csd enable
-          blur_xray enable
-          focus_follows_mouse yes
-
-          layer_effects "wofi" blur enable; shadows disable; corner_radius 13
-          layer_effects "fuzzel" blur enable; shadows enable; corner_radius 13
+          # shadows enable
+          # shadow_color #f9fc3f
+          # smart_corner_radius enable
+          # corner_radius 5
+          # shadow_blur_radius 3
+          # blur enable
+          # blur_radius 3
+          # blur_passes 3
+          # blur_noise 0.08
+          # shadows_on_csd enable
+          # blur_xray enable
+          # focus_follows_mouse yes
+          #
+          # layer_effects "wofi" blur enable; shadows disable; corner_radius 13
+          # layer_effects "fuzzel" blur enable; shadows enable; corner_radius 13
 
           set $exit "Chose anyone option of exit: [s]leep, [p]oweroff, [r]eboot, [l]ogout"
 

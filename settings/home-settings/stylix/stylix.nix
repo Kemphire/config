@@ -5,7 +5,7 @@
 }: {
   stylix.enable = true;
   stylix.autoEnable = true;
-  stylix.image = ../../../wallpapers/b-003.jpg;
+  stylix.image = ../../../wallpapers/b-295.jpg;
   stylix.polarity = "dark";
   stylix.targets.kde.enable = false;
   stylix.targets.starship.enable = false;

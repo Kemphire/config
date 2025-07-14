@@ -3,6 +3,6 @@
     ./starship.nix
     ./theme-settings.nix
     ./vscode.nix
-    ./sway.nix
+    ./wayland
   ];
 }

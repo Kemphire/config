@@ -14,6 +14,10 @@ in {
   imports = [
     # inputs.zen-browser.homeModules.beta
     inputs.zen-browser.homeModules.twilight
+
+    # Niri
+    inputs.niri.homeModules.niri
+
     # or inputs.zen-browser.homeModules.twilight-official
     ./settings/home-settings
   ];

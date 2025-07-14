@@ -17,6 +17,7 @@ in {
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./settings/system-settings.nix
+    ./settings/gnome.nix
 
     # xremap
     inputs.xremap-flakes.nixosModules.default
@@ -59,7 +60,7 @@ in {
 
   services.xserver = {
     enable = false;
-    windowManager.qtile.enable = true;
+    windowManager.qtile.enable = false;
     displayManager.sessionCommands = ''
       xwallpaper --zoom /mnt/yummy/Pictures/wallpapers_many/b-846.jpg
       xset r rate 200 35 &
@@ -134,7 +135,7 @@ in {
   users.users.hitmonlee = {
     isNormalUser = true;
     description = "Kartikey";
-    extraGroups = ["wheel" "video"]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "video" "networkmanager"]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
     home = "/home/hitmonlee";
     packages = with pkgs; [

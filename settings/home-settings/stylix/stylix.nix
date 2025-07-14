@@ -5,7 +5,7 @@
 }: {
   stylix.enable = true;
   stylix.autoEnable = true;
-  stylix.image = ../../../wallpapers/mount_fuji.jpeg;
+  stylix.image = ../../../wallpapers/b-003.jpg;
   stylix.polarity = "dark";
   stylix.targets.kde.enable = false;
   stylix.targets.starship.enable = false;
@@ -17,5 +17,6 @@
     size = 48;
   };
 
+  stylix.opacity.terminal = 0.6;
   stylix.fonts.sizes.terminal = 16;
 }

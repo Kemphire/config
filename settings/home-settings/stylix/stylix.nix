@@ -10,6 +10,7 @@
   stylix.targets.kde.enable = false;
   stylix.targets.starship.enable = false;
   stylix.targets.fish.enable = false;
+  stylix.targets.zed.enable = false;
 
   stylix.cursor = {
     name = "Banana";

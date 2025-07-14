@@ -16,9 +16,6 @@ in {
     # inputs.zen-browser.homeModules.beta
     inputs.zen-browser.homeModules.twilight
 
-    # Niri
-    inputs.niri.homeModules.niri
-
     # Stylix
     inputs.stylix.homeModules.stylix
 

@@ -160,7 +160,12 @@ in {
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = import ./packages.nix {inherit pkgs;} ++ [sddm-astronaut];
+  environment.systemPackages =
+    import ./packages.nix {inherit pkgs;}
+    ++ [
+      sddm-astronaut
+      inputs.kwin-effects-forceblur.packages.${pkgs.system}.default # Wayland
+    ];
 
   # for fonts
   fonts.packages = with pkgs; [

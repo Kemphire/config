@@ -7,7 +7,6 @@ with pkgs; [
   fish
   bluetui
   bluez
-  btop
   bluetuith
   nautilus
   xwallpaper

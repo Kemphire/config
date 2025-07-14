@@ -10,11 +10,12 @@
   # boot.loader.grub.configurationLimit = 10;
 
   # Perform garbage collection weekly to maintain low disk usage
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 1w";
-  };
+  # in favour of nh
+  # nix.gc = {
+  #   automatic = true;
+  #   dates = "weekly";
+  #   options = "--delete-older-than 1w";
+  # };
 
   # Optimize storage
   # You can also manually optimize the store via:
@@ -30,4 +31,10 @@
 
   # for electron apps running on wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 2w --keep 10";
+  };
 }

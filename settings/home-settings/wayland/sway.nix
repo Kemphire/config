@@ -46,7 +46,7 @@
           down = "j";
           left = "h";
           right = "l";
-          menu = "${pkgs.wofi}/bin/wofi";
+          menu = "${pkgs.fuzzel}/bin/fuzzel";
           gaps = {
             inner = 5;
             outer = 2;

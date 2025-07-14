@@ -296,6 +296,13 @@ in {
     enable = true;
   };
 
+  programs.fuzzel.settings = {
+    main = {
+      terminal = "${pkgs.foot}/bin/foot";
+      layer = "overlay";
+    };
+  };
+
   # configure services here
   services = {
     ssh-agent.enable = true;

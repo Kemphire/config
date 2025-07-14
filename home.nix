@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  lib,
   userName,
   ...
 }: let
@@ -17,6 +18,9 @@ in {
 
     # Niri
     inputs.niri.homeModules.niri
+
+    # Stylix
+    inputs.stylix.homeModules.stylix
 
     # or inputs.zen-browser.homeModules.twilight-official
     ./settings/home-settings
@@ -81,7 +85,7 @@ in {
     # MANPAGER = "nvim +Man!";
   };
 
-  home.pointerCursor = {
+  home.pointerCursor = lib.mkDefault {
     enable = true;
     name = "Banana";
     package = pkgs.banana-cursor;
@@ -141,7 +145,7 @@ in {
       set fish_greeting
     '';
   };
-  programs.kitty = {
+  programs.kitty = lib.mkDefault {
     enable = true;
     settings = {
       scrollback_lines = 10000;
@@ -158,7 +162,7 @@ in {
     shellIntegration.enableFishIntegration = true;
   };
 
-  programs.alacritty = {
+  programs.alacritty = lib.mkDefault {
     enable = true;
     settings = {
       window.opacity = 0.8;
@@ -179,7 +183,7 @@ in {
   programs.zoxide.enableFishIntegration = true;
   programs.fzf.enableFishIntegration = true;
 
-  programs.sioyek = {
+  programs.sioyek = lib.mkDefault {
     enable = true;
     config = {
       "should_launch_new_window" = "1";
@@ -217,7 +221,7 @@ in {
   programs.fastfetch.enable = true;
 
   # thunderbird configuration
-  programs.thunderbird = {
+  programs.thunderbird = lib.mkDefault {
     enable = true;
 
     profiles = {
@@ -264,7 +268,7 @@ in {
     };
   };
 
-  programs.foot = {
+  programs.foot = lib.mkDefault {
     enable = true;
     settings = {
       main = {

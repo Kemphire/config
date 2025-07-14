@@ -1,13 +1,14 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
     enableBashIntegration = true;
-    settings = {
+    settings = lib.mkForce {
       add_newline = true;
       continuation_prompt = "[▸▹ ](dimmed white)";
       format = builtins.concatStringsSep "" [

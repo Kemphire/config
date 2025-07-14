@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: {
   wayland = {
@@ -180,9 +181,9 @@
               l = "resize grow width 10 px";
             };
           };
-          colors = {
+          colors = lib.mkDefault {
             focused = {
-              border = "#000000";
+              border = "#ffaa99";
               background = "#000000";
               text = "#eeeeec";
               indicator = "#000000";

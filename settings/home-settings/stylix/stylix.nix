@@ -6,7 +6,7 @@
   stylix.enable = true;
   stylix.image = ../../../wallpapers/b-295.jpg;
   stylix.polarity = "dark";
-  stylix.targets.kde.enable = false;
+  stylix.targets.kde.enable = true;
   stylix.targets.starship.enable = false;
   stylix.targets.fish.enable = false;
   stylix.targets.zed.enable = false;

@@ -23,6 +23,10 @@
               always = true;
             }
             {
+              command = "${pkgs.networkmanagerapplet}/bin/nm-applet --indicator";
+              always = true;
+            }
+            {
               command = "--no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh";
               always = false;
             }

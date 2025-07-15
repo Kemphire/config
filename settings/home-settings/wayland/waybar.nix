@@ -9,7 +9,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 10;
+        height = 7;
         spacing = 3;
         bar_id = "bar-0";
         ipc = true;

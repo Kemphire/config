@@ -13,6 +13,7 @@
         wrapperFeatures.gtk = true;
         # there is a bug in swayfx for which we have to make it false
         checkConfig = true;
+        systemd.enable = true;
         config = rec {
           modifier = "Mod4";
           terminal = "kitty";

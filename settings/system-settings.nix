@@ -37,4 +37,15 @@
     clean.enable = true;
     clean.extraArgs = "--keep-since 2w --keep 10";
   };
+
+  # font configs
+
+  fonts = {
+    fontconfig = {
+      antialias = true;
+      cache32Bit = true;
+      hinting.enable = true;
+      hinting.autohint = true;
+    };
+  };
 }

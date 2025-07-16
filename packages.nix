@@ -12,7 +12,6 @@ with pkgs; [
   xwallpaper
   clipse
   yazi
-  rofi
   mpv
   qalculate-qt
   libqalculate

@@ -26,11 +26,11 @@
           "pulseaudio"
           "network"
           "memory"
-          "temperature" # Added to modules-right as requested
+          "temperature"
           "backlight"
           "battery"
           "clock"
-          "custom/power" # Included here, assuming it’s meant to be in the bar
+          "custom/power"
         ];
 
         "sway/workspaces" = {
@@ -49,7 +49,7 @@
 
         "sway/scratchpad" = {
           format = "{icon} {count}";
-          show-empty = false; # Kept as in original
+          show-empty = false;
           format-icons = ["" ""];
           tooltip = true;
           tooltip-format = "{app}: {title}";
@@ -61,7 +61,7 @@
 
         "sway/window" = {
           format = "{title}";
-          max-length = 50; # Default value for safety
+          max-length = 50;
         };
 
         "keyboard-state" = {
@@ -87,7 +87,7 @@
         };
 
         "clock" = {
-          timezone = "Asia/Kolkata"; # Adjusted to standard Nix timezone format
+          timezone = "Asia/Kolkata";
           format = "{:%H:%M:%p}";
           format-alt = "{:%Y-%m-%d}";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
@@ -145,7 +145,7 @@
           format-source-muted = "";
           format-icons = {
             headphone = "";
-            hands-free = "";
+            "hands-free" = "";
             headset = "";
             phone = "";
             portable = "";
@@ -163,49 +163,62 @@
       };
     };
 
-    style = lib.mkDefault ''
+    # Corrected GTK CSS for Waybar
+    style = lib.mkAfter ''
+      /* Universal selector for default styles */
       * {
-      font-family: monospace;
-      font-size: 12px;
-      min-height: 0;
-      border: none;
-      border-radius: 0;
-      padding: 0 8px;
-      margin: 0 2px;
+        font-family: monospace, "Font Awesome 6 Free"; /* Added Font Awesome as a fallback for icons */
+        font-size: 12px;
+        min-height: 0;
+        border: none;
+        border-radius: 0;
+        padding: 0 8px;
+        margin: 0 2px;
       }
 
+      /* Main bar styling */
       window#waybar {
-      background: rgba(0, 0, 0, 0.8);
-      color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.8); /* Use background-color for better compatibility */
+        color: #ffffff;
       }
 
+      /* Workspaces module styling */
       #workspaces button {
-      padding: 0 5px;
-      color: #ffffff;
-      background: transparent;
+        padding: 0 5px;
+        color: #ffffff;
+        background-color: transparent;
+        border: none; /* Explicitly remove border from buttons */
       }
 
       #workspaces button.focused {
-      background: #64727d;
+        background-color: #64727d;
       }
 
       #workspaces button.urgent {
-      background: #f53c3c;
+        background-color: #f53c3c;
       }
+
+      /* General styling for most modules */
+      #mode, #scratchpad, #window, #memory, #temperature, #backlight, #battery, #network, #pulseaudio, #clock, #custom-power {
+        padding: 0 8px;
+        color: #ffffff;
+      }
+
+      /* Specific styling for the system tray */
       #tray {
-      padding: 0 10px;
+        padding: 0 10px;
       }
+
+      /* Hide the tray module when it is empty by making it take up no space */
       #tray.tray-empty {
-      display: none;
+        padding: 0;
+        margin: 0;
+        min-width: 0;
       }
 
-      #mode, #scratchpad, #window, #cpu, #memory, #temperature, #backlight, #battery, #network, #pulseaudio, #tray, #clock, #custom-vivaldi, #custom-media, #custom-power {
-      padding: 0 8px;
-      color: #ffffff;
-      }
-
+      /* Hover effect for the power button */
       #custom-power:hover {
-      background: rgba(255, 85, 85, 0.5);
+        background-color: rgba(255, 85, 85, 0.5); /* Use background-color */
       }
     '';
   };

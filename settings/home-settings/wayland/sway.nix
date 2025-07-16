@@ -51,7 +51,7 @@
           down = "j";
           left = "h";
           right = "l";
-          menu = "${pkgs.fuzzel}/bin/fuzzel";
+          menu = "${pkgs.rofi-wayland}/bin/rofi -show drun -show-icons";
           gaps = {
             inner = 5;
             outer = 2;
@@ -455,5 +455,10 @@
     package = pkgs.waybar;
   };
 
-  home.packages = [pkgs.swaynotificationcenter pkgs.sway-audio-idle-inhibit pkgs.swayidle pkgs.libsecret];
+  home.packages = with pkgs; [
+    swaynotificationcenter
+    sway-audio-idle-inhibit
+    swayidle
+    libsecret
+  ];
 }

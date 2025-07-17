@@ -2,7 +2,6 @@
 with pkgs; [
   bat
   zoxide
-  starship
   fzf
   alacritty
   zathura

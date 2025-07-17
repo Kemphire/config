@@ -231,7 +231,7 @@
       };
       python = {
         format = " [py](italic) [\${symbol}\${version}]($style)";
-        symbol = "[](bold bright-blue)⌊ ";
+        symbol = "[](bold bright-blue)";
         version_format = "\${raw}";
       };
       ruby = {

@@ -228,16 +228,27 @@
               scale = "1.3";
             };
           };
+          input = {
+            "*" = {
+              drag_lock = "enabled";
+            };
+            "10182:480:DELL09EC:00_27C6:01E0_Touchpad" = {
+              dwt = "enabled";
+              tap = "enabled";
+              natural_scroll = "disabled";
+              middle_emulation = "enabled";
+            };
+          };
         };
         extraConfigEarly = ''
           exec ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1
 
-          input "10182:480:DELL09EC:00_27C6:01E0_Touchpad" {
-          dwt enabled
-          tap enabled
-          natural_scroll disabled
-          middle_emulation enabled
-          }
+          # input "10182:480:DELL09EC:00_27C6:01E0_Touchpad" {
+          # dwt enabled
+          # tap enabled
+          # natural_scroll disabled
+          # middle_emulation enabled
+          # }
 
 
           set $width 824

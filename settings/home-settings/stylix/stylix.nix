@@ -18,6 +18,9 @@
 
   stylix.targets.zen-browser.profileNames = ["default"];
 
-  stylix.opacity.terminal = 0.6;
+  stylix.opacity = {
+    terminal = 0.6;
+    desktop = 0.2;
+  };
   stylix.fonts.sizes.terminal = 16;
 }

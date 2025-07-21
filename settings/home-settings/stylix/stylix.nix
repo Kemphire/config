@@ -4,9 +4,8 @@
   ...
 }: {
   stylix.enable = true;
-  stylix.image = ../../../wallpapers/b-798.jpg;
+  stylix.image = ../../../wallpapers/b-061.jpg;
   stylix.polarity = "dark";
-  stylix.targets.kde.enable = true;
   stylix.targets.starship.enable = false;
   stylix.targets.fish.enable = false;
   stylix.targets.zed.enable = false;
@@ -16,6 +15,8 @@
     package = pkgs.banana-cursor;
     size = 48;
   };
+
+  stylix.targets.zen-browser.profileNames = ["default"];
 
   stylix.opacity.terminal = 0.6;
   stylix.fonts.sizes.terminal = 16;

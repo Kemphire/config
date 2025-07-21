@@ -8,6 +8,7 @@
     ./theme-settings.nix
     ./vscode.nix
     ./wayland
+    ./btop.nix
     ./stylix
   ];
 }

@@ -48,4 +48,7 @@
       hinting.autohint = true;
     };
   };
+
+  # clean the fucking tmp
+  boot.tmp.cleanOnBoot = true;
 }

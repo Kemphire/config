@@ -19,6 +19,7 @@ with pkgs; [
   eza
   kdePackages.kdenlive
   pandoc
+  haskellPackages.pandoc-crossref
   libreoffice-qt
   vesktop
   fastfetch
@@ -48,5 +49,4 @@ with pkgs; [
   autotiling
   (flameshot.override {enableWlrSupport = true;})
   fuzzel
-  btop
 ]

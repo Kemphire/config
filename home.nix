@@ -16,7 +16,7 @@ in {
     # inputs.zen-browser.homeModules.beta
     inputs.zen-browser.homeModules.twilight
 
-    # Stylix
+    # stylix
     inputs.stylix.homeModules.stylix
 
     # or inputs.zen-browser.homeModules.twilight-official

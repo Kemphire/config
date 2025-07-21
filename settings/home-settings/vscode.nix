@@ -4,14 +4,14 @@
     ms-python.python
     ms-python.vscode-pylance
     wakatime.vscode-wakatime
+    ms-toolsai.jupyter-keymap
   ];
 in {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode.fhs;
+    package = pkgs.vscode;
     profiles = {
       "hitmonlee" = {
-        enableUpdateCheck = false;
         userSettings = {
           "github.copilot.enable" = {
             "*" = false;
@@ -22,8 +22,9 @@ in {
           };
           "files.autoSave" = "afterDelay";
           "editor.fontFamily" = "FiraCode Nerd Font Propo";
+          "workbench.sideBar.location" = "right";
         };
-        extensions = extensions;
+        inherit extensions;
       };
       "default" = {
         enableUpdateCheck = false;
@@ -35,9 +36,10 @@ in {
             "scminput" = false;
             "chat.editor.fontFamily" = "FiraCode Nerd Font";
           };
-          "files.autoSave" = "on";
+          "files.autoSave" = "afterDelay";
+          "workbench.sideBar.location" = "right";
         };
-        extensions = extensions;
+        inherit extensions;
       };
     };
   };

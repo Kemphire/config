@@ -294,7 +294,7 @@
           # shadows_on_csd enable
           # blur_xray enable
           # focus_follows_mouse yes
-          #
+
           # layer_effects "wofi" blur enable; shadows disable; corner_radius 13
           # layer_effects "fuzzel" blur enable; shadows enable; corner_radius 13
 

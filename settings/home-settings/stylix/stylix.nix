@@ -9,6 +9,7 @@
   stylix.targets.starship.enable = false;
   stylix.targets.fish.enable = false;
   stylix.targets.zed.enable = false;
+  stylix.targets.vscode.enable = false;
 
   stylix.cursor = {
     name = "Banana";

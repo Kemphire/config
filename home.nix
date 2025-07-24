@@ -142,20 +142,20 @@ in {
       set fish_greeting
     '';
   };
-  programs.kitty = lib.mkDefault {
+  programs.kitty = {
     enable = true;
-    settings = {
+    settings = lib.mkAfter {
       scrollback_lines = 10000;
-      background_opacity = 0.6;
-      font_size = 16;
       disable_ligatures = "never";
       cursor_shape = "beam";
       tab_bar_edge = "top";
       tab_bar_style = "powerline";
       background_blur = 5;
-      font_family = "FiraCode Nerd Font";
       cursor_trail = 1;
     };
+    extraConfig = ''
+      scrollback_pager nvim -u ${./dotfiles_imper/.config/nvim/kitty+page.lua} -R -M -
+    '';
     shellIntegration.enableFishIntegration = true;
   };
 

@@ -18,6 +18,7 @@ in {
     ./hardware-configuration.nix
     ./settings/system-settings.nix
     ./settings/gnome.nix
+    ./settings/system-apps.nix
 
     # xremap
     inputs.xremap-flakes.nixosModules.default

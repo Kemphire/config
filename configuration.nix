@@ -162,7 +162,7 @@ in {
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages =
-    import ./packages.nix {inherit pkgs;}
+    import ./packages.nix {inherit pkgs inputs;}
     ++ [
       sddm-astronaut
       inputs.kwin-effects-forceblur.packages.${pkgs.system}.default # Wayland

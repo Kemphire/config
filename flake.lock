@@ -208,6 +208,24 @@
         "type": "github"
       }
     },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems_2"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -271,11 +289,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753470191,
-        "narHash": "sha256-hOUWU5L62G9sm8NxdiLWlLIJZz9H52VuFiDllHdwmVA=",
+        "lastModified": 1753617834,
+        "narHash": "sha256-WEVfKrdIdu5CpppJ0Va3vzP0DKlS+ZTLbBjugMO2Drg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a1817d1c0e5eabe7dfdfe4caa46c94d9d8f3fdb6",
+        "rev": "72cc1e3134a35005006f06640724319caa424737",
         "type": "github"
       },
       "original": {
@@ -399,7 +417,7 @@
         "hyprwayland-scanner": "hyprwayland-scanner",
         "nixpkgs": "nixpkgs_4",
         "pre-commit-hooks": "pre-commit-hooks",
-        "systems": "systems_3",
+        "systems": "systems_4",
         "xdph": "xdph"
       },
       "locked": {
@@ -773,9 +791,32 @@
         "home-manager": "home-manager",
         "kwin-effects-forceblur": "kwin-effects-forceblur",
         "nixpkgs": "nixpkgs",
+        "stormy": "stormy",
         "stylix": "stylix",
         "xremap-flakes": "xremap-flakes",
         "zen-browser": "zen-browser"
+      }
+    },
+    "stormy": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753641624,
+        "narHash": "sha256-AkllOUFsgXUxquynpUQemOgnFgUwAmea7n9FksoRECg=",
+        "owner": "Kemphire",
+        "repo": "stormy",
+        "rev": "bd70c5f3b44a1180a6b8663c6e03ac8294ca5bbe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kemphire",
+        "ref": "nix",
+        "repo": "stormy",
+        "type": "github"
       }
     },
     "stylix": {
@@ -791,7 +832,7 @@
           "nixpkgs"
         ],
         "nur": "nur",
-        "systems": "systems_2",
+        "systems": "systems_3",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
@@ -799,11 +840,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1753546152,
-        "narHash": "sha256-NzckVdZ5EwAB9ZKcRlGGz8irB/ibYYb/BTz35ZKNfLs=",
+        "lastModified": 1753641602,
+        "narHash": "sha256-lt+bUL+Mx9FAKW2qTuPMQge/WDhW821gCkhIBrDbrXk=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "602de220be6d94dfcb2c759f22435a4647f2396e",
+        "rev": "a6cf77599790af5a21d7043a6b65767e410d633f",
         "type": "github"
       },
       "original": {
@@ -843,6 +884,21 @@
       }
     },
     "systems_3": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_4": {
       "locked": {
         "lastModified": 1689347949,
         "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
@@ -1073,11 +1129,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753539606,
-        "narHash": "sha256-D+8/81kNTSKyIF3W/9G3SbLcX4ladHf9r1SZgkfXTL0=",
+        "lastModified": 1753623063,
+        "narHash": "sha256-fS4zlM4Bs0sk9rGS1t1wp4SLQRzkpIr7vXCfMc8NpNY=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "f2665b91cf1f0db1d750fbf7030b5c82eeb1d494",
+        "rev": "4d72beff27e2152b2b1df05202b2dc50397d4c0d",
         "type": "github"
       },
       "original": {

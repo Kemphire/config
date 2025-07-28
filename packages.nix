@@ -47,4 +47,5 @@ with pkgs; [
   distrobox
 
   pavucontrol
+  nodejs-slim_24
 ]

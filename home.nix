@@ -148,8 +148,6 @@ in {
       scrollback_lines = 10000;
       disable_ligatures = "never";
       cursor_shape = "beam";
-      tab_bar_edge = "top";
-      tab_bar_style = "powerline";
       background_blur = 5;
       cursor_trail = 1;
     };

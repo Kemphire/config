@@ -49,4 +49,6 @@ with pkgs; [
   autotiling
   (flameshot.override {enableWlrSupport = true;})
   fuzzel
+
+  devenv
 ]

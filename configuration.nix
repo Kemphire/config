@@ -19,6 +19,7 @@ in {
     ./settings/system-settings.nix
     # ./settings/gnome.nix
     ./settings/system-apps.nix
+    ./settings/direnv.nix
 
     # xremap
     inputs.xremap-flakes.nixosModules.default
@@ -136,7 +137,7 @@ in {
   users.users.hitmonlee = {
     isNormalUser = true;
     description = "Kartikey";
-    extraGroups = ["wheel" "video" "networkmanager"]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "video" "networkmanager" "kvm" "adbusers"]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
     home = "/home/hitmonlee";
     packages = with pkgs; [

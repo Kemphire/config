@@ -5,9 +5,8 @@
 }: {
   programs.rofi = {
     enable = true;
-    package =
-      pkgs.rofi-wayland;
+    package = pkgs.rofi-wayland;
     terminal = "${pkgs.kitty}/bin/kitty";
-    theme = lib.mkDefault "";
+    theme = lib.mkForce "dmenu";
   };
 }

@@ -17,7 +17,7 @@ in {
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./settings/system-settings.nix
-    ./settings/gnome.nix
+    # ./settings/gnome.nix
     ./settings/system-apps.nix
 
     # xremap

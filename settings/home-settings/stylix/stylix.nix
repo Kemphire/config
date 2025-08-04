@@ -4,7 +4,7 @@
   ...
 }: {
   stylix.enable = true;
-  stylix.image = ../../../wallpapers/0142.jpg;
+  stylix.image = ../../../wallpapers/b-681.jpg;
   stylix.polarity = "dark";
   stylix.targets.starship.enable = false;
   stylix.targets.fish.enable = false;

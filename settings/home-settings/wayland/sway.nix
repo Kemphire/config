@@ -27,7 +27,7 @@
               always = true;
             }
             {
-              command = "--no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh";
+              command = "--no-startup-id ${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh";
               always = false;
             }
             {

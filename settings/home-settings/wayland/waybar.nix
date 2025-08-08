@@ -164,7 +164,7 @@
     };
 
     # Corrected GTK CSS for Waybar
-    style = lib.mkAfter ''
+    style = lib.mkBefore ''
       /* Universal selector for default styles */
       * {
         font-family: monospace, "Font Awesome 6 Free"; /* Added Font Awesome as a fallback for icons */

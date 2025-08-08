@@ -142,6 +142,7 @@ in {
       set fish_greeting
     '';
   };
+
   programs.kitty = {
     enable = true;
     settings = lib.mkAfter {

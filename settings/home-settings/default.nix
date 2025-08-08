@@ -10,5 +10,6 @@
     ./wayland
     ./btop.nix
     ./stylix
+    ./envVars.nix
   ];
 }

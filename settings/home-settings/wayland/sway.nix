@@ -26,8 +26,16 @@
               command = "${pkgs.networkmanagerapplet}/bin/nm-applet --indicator";
               always = true;
             }
+            # {
+            #   command = "--no-startup-id ${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh";
+            #   always = false;
+            # }
             {
-              command = "--no-startup-id ${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh";
+              command = "eval $(${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start)";
+              always = false;
+            }
+            {
+              command = "export SSH_AUTH_SOCK";
               always = false;
             }
             {
@@ -84,6 +92,7 @@
             "${modifier}+Shift+${down}" = "move down";
             "${modifier}+Shift+${up}" = "move up";
             "${modifier}+Shift+${right}" = "move right";
+            "${modifier}+Shift+z" = "exec ${pkgs.hyprpicker}/bin/hyprpicker -a";
 
             "XF86AudioRaiseVolume" = "exec ${pactl} set-sink-volume @DEFAULT_SINK@ +5%";
             "XF86AudioLowerVolume" = "exec ${pactl} set-sink-volume @DEFAULT_SINK@ -5%";

@@ -48,4 +48,6 @@ with pkgs; [
 
   pavucontrol
   nodejs-slim_24
+
+  gnome-boxes
 ]

@@ -20,6 +20,7 @@ in {
     # ./settings/gnome.nix
     ./settings/system-apps.nix
     ./settings/direnv.nix
+    ./settings/virtualisation.nix
 
     # xremap
     inputs.xremap-flakes.nixosModules.default
@@ -134,10 +135,10 @@ in {
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.hitmonlee = {
+  users.users.${userName} = {
     isNormalUser = true;
     description = "Kartikey";
-    extraGroups = ["wheel" "video" "networkmanager" "kvm" "adbusers"]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "video" "networkmanager" "kvm" "adbusers" "libvirtd"]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
     home = "/home/hitmonlee";
     packages = with pkgs; [

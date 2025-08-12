@@ -51,4 +51,5 @@ with pkgs; [
   fuzzel
 
   devenv
+  oculante
 ]

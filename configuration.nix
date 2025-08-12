@@ -10,7 +10,7 @@
   ...
 }: let
   sddm-astronaut = pkgs.sddm-astronaut.override {
-    embeddedTheme = "black_hole";
+    embeddedTheme = "japanese_aesthetic";
   };
 in {
   imports = [
@@ -21,6 +21,7 @@ in {
     ./settings/system-apps.nix
     ./settings/direnv.nix
     ./settings/virtualisation.nix
+    ./settings/mime.nix
 
     # xremap
     inputs.xremap-flakes.nixosModules.default
